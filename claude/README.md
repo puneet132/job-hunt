@@ -4,12 +4,12 @@
 
 ## Install
 **Claude app (claude.ai, desktop, mobile)**
-1. Download `job-hunt.skill` from this repo's Releases page, or zip the `job-hunt/` folder yourself.
+1. Download [`job-hunt.skill`](job-hunt.skill) from this folder (or zip the `job-hunt/` folder yourself).
 2. **Settings → Capabilities → Skills → Upload skill**, then choose the file.
 
 **Claude Code**
 ```bash
-git clone https://github.com/<owner>/job-hunt.git
+git clone https://github.com/puneet132/job-hunt.git
 cp -r job-hunt/claude/job-hunt ~/.claude/skills/
 ```
 
