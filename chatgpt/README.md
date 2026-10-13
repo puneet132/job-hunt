@@ -1,41 +1,34 @@
 # Job Hunt for ChatGPT
 
-Setup takes about 15 minutes. You'll use three ChatGPT features:
+## Option 1 (recommended): install the skill (paid plans)
+ChatGPT supports the same Agent Skills format Claude uses, so the whole skill (onboarding, resume review, resume builder script, job search rules, quality checks) works as-is.
 
-| Part | Feature | Does what |
-|---|---|---|
-| A | Project (or Custom GPT) | Day-to-day: find jobs, tailor resume + email from a screenshot, rate your resume, answer questionnaires |
-| B | Scheduled task | Daily digest of roles posted in the last 3 days |
-| C | Gmail app (connector) | Reads LinkedIn / Naukri / Instahyre / Indeed alert emails; drafts application emails |
+1. Download [`job-hunt.skill`](../job-hunt.skill) from the repo root. It's a zip; don't unzip it.
+2. In the ChatGPT app: **Plugins → Skills → Create → Upload from your computer** → choose the file.
+3. In a chat (Work mode), type `@job-hunt`, or just say "Help me with my job hunt" and attach your resume.
 
-## Before you start
-Copy `../shared/profile-template.md` to `profile.md` and fill it in. Keep it private.
+On Enterprise and Edu plans an admin has to turn Skills on first. **Codex users** (all plans, including Free): unzip the file and put the `job-hunt` folder in `~/.agents/skills/`, then type `$job-hunt`.
 
-## A. Project
-1. Sidebar → **Projects → New project** → name it "Job Hunt".
+## Option 2: Project (Free or Go plans, or if you can't upload skills)
+1. **Projects → New project** → "Job Hunt".
 2. Project settings → **Instructions** → paste all of [`instructions.txt`](instructions.txt).
-3. **Add files:**
-   - your filled-in `profile.md`
-   - [`../shared/search-rules.md`](../shared/search-rules.md)
-   - [`../shared/platforms-india.md`](../shared/platforms-india.md)
-   - [`../shared/application-workflow.md`](../shared/application-workflow.md)
-   - your master resume (PDF or DOCX)
-4. Test it in a chat inside the project: "Find Product Owner jobs posted in the last 3 days in Gurugram", or send a job-post screenshot.
+3. **Add files** from [`../skills/job-hunt/references/`](../skills/job-hunt/references/): `onboarding.md`, `search-rules.md`, `platforms-india.md`, `application-workflow.md`, `resume-review.md`, `resume-format.md`, `quality-checklist.md`, `compensation-india.md`, plus `../skills/job-hunt/scripts/build_resume.py` and `../skills/job-hunt/assets/resume-example.json`.
+4. Start a chat in the project and attach your resume. It runs onboarding and asks only what's missing.
+5. When onboarding gives you `profile.md`, add it to the project's files so every chat knows you.
 
-**Custom GPT instead?** Explore GPTs → Create → Configure: paste the same instructions and upload the same files as Knowledge. Use this if you want to share the assistant. Scheduled tasks can't run Custom GPTs.
+A **Custom GPT** works the same way (Create → Configure: same instructions, same files as Knowledge) if you want to share it.
 
-## B. Daily digest
-Scheduled tasks can't read Project files, so the prompt has to be self-contained.
-1. Open [`../shared/daily-digest-prompt.md`](../shared/daily-digest-prompt.md), copy the prompt and fill in every `<…>`.
-2. Paste it into a **normal chat** (not inside the Project) and send. If ChatGPT doesn't schedule it automatically, add: "Make this a scheduled task every day at 7:50 PM IST."
-3. Turn on delivery: **Settings → Notifications → Tasks → Email and/or Push**.
+## Daily digest (both options)
+Scheduled tasks can't use skills or project files, so the digest prompt has to stand alone.
+1. Ask the assistant: "Fill in the daily digest prompt from my profile." It completes [`daily-digest-prompt.md`](../skills/job-hunt/references/daily-digest-prompt.md) for you.
+2. Paste the result into a **normal chat** and add: "Make this a scheduled task every day at 7:50 PM IST."
+3. **Settings → Notifications → Tasks:** turn on Email and/or Push.
 
-Limits: Plus allows 5 active tasks; Free allows 3 and only flexible time windows.
-
-## C. Connect Gmail
-**Settings → Apps → Gmail → Connect.** Then set daily job alerts on LinkedIn, Naukri and Instahyre (see `../shared/platforms-india.md`) so there's something to read.
+## Connect Gmail
+**Settings → Apps → Gmail → Connect.** The assistant can then read LinkedIn / Naukri / Instahyre / Indeed alert emails and draft applications. Set daily alerts on those sites (see `platforms-india.md`) so there's something to read.
 
 ## Known limits
-- Gmail drafts created by ChatGPT can't carry attachments; download the tailored resume and attach it yourself. Sending needs your approval each time.
+- ChatGPT's Gmail drafts can't carry attachments; download the tailored resume and attach it yourself. Sending needs your approval each time.
+- No live tracker page. Use a Google Sheet, or the CSV tracker in `tracker.md`.
 - Live LinkedIn/Naukri search needs agent mode with you logged in; scheduled tasks rely on alert emails and public sites.
-- Features and plan limits change; check OpenAI's help centre if a step looks different.
+- Features and plan limits change; if a step looks different, check OpenAI's help centre.

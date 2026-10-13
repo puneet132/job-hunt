@@ -1,0 +1,55 @@
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage[a4paper,top=0.4in,bottom=0.35in,left=0.5in,right=0.5in]{geometry}
+\usepackage{fontspec}\setmainfont{Latin Modern Roman}[Ligatures={TeX,NoCommon}]
+
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\raggedright
+\titleformat{\section}{\vspace{-3pt}\scshape\large}{}{0em}{}[\vspace{-6pt}\rule{\linewidth}{0.5pt}\vspace{-4pt}]
+\titlespacing*{\section}{0pt}{4pt}{3pt}
+\newcommand{\role}[4]{%
+  \begin{tabularx}{0.985\linewidth}[t]{@{}X@{}r@{}}
+  \textbf{\large #1} & #2\\
+  \textit{\small #3} & \textit{\small #4}
+  \end{tabularx}\vspace{-3pt}}
+\newenvironment{items}{\begin{itemize}[leftmargin=0.32in,itemsep=0pt,parsep=0pt,topsep=1pt,label=\textbullet]\fontsize{10.1}{12.2}\selectfont}{\end{itemize}\vspace{2pt}}
+\newcommand{\lnk}[2]{\href{#1}{\underline{#2}}}
+\begin{document}
+\begin{center}
+{\fontsize{24}{28}\selectfont\textbf{Your Name}}\\[2pt]
+{\large Product Owner \textbar{} Product Manager \textbullet{} Your Domain}\\[2pt]
+\small +91-00000 00000 $|$ \lnk{mailto:you@example.com}{you@example.com} $|$ \lnk{https://linkedin.com/in/you}{linkedin.com/in/you} $|$ City, India
+\end{center}
+\vspace{-6pt}
+
+\section{Summary}
+\leftskip=0.15in
+{\fontsize{10.3}{12.6}\selectfont\textbf{Two or three lines that lead with your two strongest outcomes, with numbers.}}
+\par\leftskip=0pt
+
+\section{Experience}
+\leftskip=0.15in
+\role{Your Title at Company}{Mon YYYY -- Present}{One line of context: client, product, scope.}{City}
+\begin{items}
+\item What you did, how, and the result, with the number first where there is one
+\item Another outcome-led bullet
+\end{items}
+\par\leftskip=0pt
+
+\section{Skills}
+\leftskip=0.15in
+{\fontsize{10.1}{12.3}\selectfont
+\textbf{Product}: Skill, Skill, Skill\\
+\textbf{Tools}: Tool, Tool, Tool\par}
+\par\leftskip=0pt
+
+\section{Education \& Awards}
+\leftskip=0.15in
+\role{Degree, Institution}{YYYY -- YYYY}{Optional note}{City}
+\par\leftskip=0pt
+\end{document}

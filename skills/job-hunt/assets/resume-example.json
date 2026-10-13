@@ -1,0 +1,45 @@
+{
+  "name": "Asha Rao",
+  "headline": "Product Owner | Product Manager · Fintech & Digital Platforms",
+  "contact": ["+91-90000 00000", "asha.rao@example.com", "linkedin.com/in/asharao", "Pune, India"],
+  "summary": "Product Owner with 5 years building payments and lending products. Launched a merchant onboarding flow that halved activation time and wrote the PRDs for UPI AutoPay, now used by 40,000+ merchants. Strong at discovery, backlog ownership and getting business, product and engineering aligned from requirements to go-live.",
+  "summary_bold": true,
+  "experience": [
+    {
+      "title": "Product Owner",
+      "company": "Example Payments",
+      "dates": "Jan 2023 – Present",
+      "context": "Merchant platform: onboarding, settlements and UPI AutoPay.",
+      "location": "Pune",
+      "bullets": [
+        "Launched a **digital merchant onboarding flow** that cut activation time from 6 days to 3",
+        "Wrote PRDs and user stories with acceptance criteria for **UPI AutoPay**, now used by 40,000+ merchants",
+        "Run two-week sprints with a 12-person team: planning, grooming, demos and UAT sign-off",
+        "Defined activation and retention KPIs with the business head and tracked them in Mixpanel"
+      ]
+    },
+    {
+      "title": "Business Analyst",
+      "company": "Example Tech Services",
+      "dates": "Jul 2021 – Dec 2022",
+      "context": "IT services firm. Lending and e-commerce products for global clients.",
+      "location": "Bengaluru",
+      "bullets": [
+        "Owned requirements for a loan origination system through UAT and go-live",
+        "Ran discovery workshops and wrote SOWs for 15+ presales engagements; 4 converted"
+      ]
+    }
+  ],
+  "projects": [
+    "**Budget tracker app:** built and shipped a personal finance PWA with 200+ users"
+  ],
+  "skills": {
+    "Product": "Roadmapping, Backlog Prioritization, Product Discovery, PRD, KPI & Event Tracking, Stakeholder Management",
+    "Analysis & Delivery": "BRD / FRD, User Stories & Acceptance Criteria, Gap Analysis, Agile / Scrum, UAT & Defect Management",
+    "Tools": "JIRA, Confluence, Figma, Mixpanel, SQL (basic), Excel"
+  },
+  "education": [
+    {"degree": "B.Tech in Computer Science, Example Institute of Technology", "dates": "2017 – 2021"}
+  ],
+  "awards": ["Star Performer, Example Payments (2024)"]
+}

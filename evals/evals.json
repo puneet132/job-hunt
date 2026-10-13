@@ -1,0 +1,35 @@
+{
+  "skill_name": "job-hunt",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "hey can you help me find a new job? i'm a BA with ~4 yrs, mostly fintech",
+      "expected_output": "Asks for the resume first (no profile yet), then asks only what the resume can't answer (targets, cities, CTC, notice) in short batches with options. Does not start searching before it has the basics.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "[profile attached] show me product owner and BA openings posted in the last 3 days, gurgaon first then noida, bangalore",
+      "expected_output": "Only roles with a confirmed posting date within 3 days; each has a working link; grouped by city in the given order; Strong/Good/Stretch with one-line reasons; data/BI/SAP 'BA' roles excluded; missing fields shown as 'Not listed'.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "[job post screenshot + profile attached] apply to this one, recruiter is priya@acme.com",
+      "expected_output": "A tailored one-page resume built with scripts/build_resume.py using only profile facts, plus a 5–8 line email with bullets, answering any CTC/notice questions in the post; an email draft created if a tool exists; nothing sent without approval.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "[resume attached] i've applied to 300 jobs and got zero calls. what's wrong with my resume?",
+      "expected_output": "Researches live postings for the target role, reports a requirement-coverage table, runs ATS parsing and credibility checks (headline vs history, unexplained gaps, indefensible metrics, CTC jump), runs a short discovery interview, then offers a rebuilt resume.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "can you send me these openings every evening around 8?",
+      "expected_output": "Produces a self-contained daily digest prompt filled from the profile, explains how to schedule it on the current platform, and sets up or suggests a tracker to avoid repeats.",
+      "files": []
+    }
+  ]
+}

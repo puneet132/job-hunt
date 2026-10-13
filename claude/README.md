@@ -1,26 +1,27 @@
 # Job Hunt for Claude
 
-`job-hunt/` is a standard Agent Skill (a `SKILL.md` plus reference files). Claude loads it automatically when you ask for job openings, share a job post, or ask to tailor your resume.
+The skill lives in [`../skills/job-hunt/`](../skills/job-hunt/). It's the same folder ChatGPT uses.
 
 ## Install
 **Claude app (claude.ai, desktop, mobile)**
-1. Download [`job-hunt.skill`](job-hunt.skill) from this folder (or zip the `job-hunt/` folder yourself).
+1. Download [`job-hunt.skill`](../job-hunt.skill) from the repo root.
 2. **Settings → Capabilities → Skills → Upload skill**, then choose the file.
 
 **Claude Code**
 ```bash
 git clone https://github.com/puneet132/job-hunt.git
-cp -r job-hunt/claude/job-hunt ~/.claude/skills/
+cp -r job-hunt/skills/job-hunt ~/.claude/skills/
 ```
 
 ## First use
-Start a chat with: "Set up my job hunt profile," and attach your resume. Claude fills in `profile-template.md` with you, then you can ask:
+Say "Help me with my job hunt" and attach your resume. Claude reads it, asks only what's missing (multiple choice where it can), and saves your profile. Then:
 - "Today's openings": roles posted in the last 3 days, grouped by city
-- (job-post screenshot): tailored one-page resume plus a short email, saved as a Gmail draft if Gmail is connected
-- "Rate my resume for this JD"
-- "Send me openings every day at 7:50 PM": creates a scheduled task where your Claude plan supports it
+- (job-post screenshot): tailored one-page resume plus a short email, as a Gmail draft with the resume attached if Gmail is connected
+- "Is my resume good enough?": market research, ATS check, discovery interview, rebuild
+- "Send me openings every day at 7:50 PM": a scheduled task, plus a live tracker page where your plan supports artifacts
 
 ## Works best with
-- **Gmail connector:** reads LinkedIn / Naukri / Instahyre / Indeed alert emails, and creates application drafts with the resume attached
+- **Gmail connector:** reads job-alert emails; creates drafts with the resume attached
 - **Web search and fetch:** Weekday, company career pages
-- **An Indeed connector,** if available in your Claude workspace
+- **Code execution:** builds resume files with `scripts/build_resume.py`
+- **An Indeed connector,** if your workspace has one
