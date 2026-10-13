@@ -20,6 +20,7 @@ Look for a filled-in profile: a `profile.md` the user attached or saved earlier,
 | `references/search-rules.md` | Any job search: roles, BA definition, city order, 3-day rule, filters, fit, output format |
 | `references/platforms-india.md` | Any job search: which platforms exist and how to reach each |
 | `references/application-workflow.md` | The user shares a job post, JD or screenshot |
+| `references/fit-assessment.md` | Deciding whether a role is worth applying to, and spotting reposts |
 | `references/resume-review.md` | "Is my resume good?", "no callbacks", "rebuild my resume", "rate it against this JD" |
 | `references/resume-format.md` | Producing any resume file |
 | `references/compensation-india.md` | CTC questions or expectations |
@@ -29,6 +30,7 @@ Look for a filled-in profile: a `profile.md` the user attached or saved earlier,
 
 Scripts and assets:
 - `scripts/build_resume.py`: JSON → one-page ATS-friendly DOCX (and PDF with LibreOffice). Shape in `assets/resume-example.json`.
+- `scripts/shrink_docx.py`: run on every resume before attaching it to an email. Oversized attachments fail silently, leaving a draft that claims a resume and has none.
 - `assets/resume-template.tex`: the same layout in LaTeX.
 - `assets/tracker-template.csv`: tracker columns.
 
@@ -38,7 +40,7 @@ Scripts and assets:
 Read `search-rules.md` and `platforms-india.md`. Search every reachable source: any connected job-board tool, web search and page fetch (Weekday, company career pages), and the user's email if connected (LinkedIn / Naukri / Instahyre / Indeed alerts from the last 3 days). Keep only roles posted in the last 3 days that pass the filters, read each description before rating it Strong or Good, skip roles already tracked, and present them grouped by city in the user's order, one line each with a working link.
 
 **A job post, JD or screenshot**
-Follow `application-workflow.md`: check fit, tailor the resume (build it per `resume-format.md`), write a 5–8 line email, and create an email draft with the resume attached if an email tool allows. Don't stop for confirmation unless there's a gap that can't be bridged. Never send without the user's OK.
+Follow `application-workflow.md`: check the tracker for a repost, rate the fit per `fit-assessment.md`, tailor the resume (build it per `resume-format.md`), write a 5–8 line email, and create a draft with the resume attached — shrunk first, and never claimed in the body unless it's confirmed. Don't stop for confirmation unless it's a mismatch or a duplicate. Never send without the user's OK.
 
 **"Is my resume good?" / "no callbacks" / "rebuild it"**
 Follow `resume-review.md`: research live postings for their target role, run the ATS and credibility checks, run the discovery interview to surface missing achievements, then rebuild.

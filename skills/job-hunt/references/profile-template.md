@@ -45,5 +45,13 @@ For each job: title, company, dates, city, then 3–6 bullets with real outcomes
 - Tools:
 
 ## Honesty rules
-List anything the assistant must never claim, e.g. numbers that were only estimates, tools you've only seen others use, certifications you haven't finished.
+List anything the assistant must never claim, e.g. numbers that were only estimates, tools you've only seen others use, certifications you haven't finished, or seniority you haven't held.
 -
+
+## Retired claims
+When you correct a number or a claim, record it here. Old phrasings survive in resume files you built weeks ago and quietly resurface; this is the list that stops that. Mark anything you'd have to go and check as approximate — a number you can't defend in an interview is worse than no number.
+
+| Don't use | Use instead | Why |
+|---|---|---|
+| e.g. "doubled conversion" | omit | rough estimate, never measured |
+| e.g. "10,000+ users onboarded" | "10,000+ accounts created" | wrong metric — accounts, not people |

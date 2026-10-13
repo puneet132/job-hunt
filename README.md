@@ -8,7 +8,9 @@ An AI job-search assistant for **Product Manager, Product Owner and delivery-sid
 - **Judges fit by the job description, not the title.** "BA" roles that are really reporting or SAP configuration get dropped. Every role is rated Strong / Good / Stretch with a reason.
 - **Groups roles by city in your order:** default Gurugram → Delhi NCR → Pune → Bengaluru → Hyderabad → Mumbai → Remote.
 - **Fixes your resume.** It researches live postings, checks ATS parsing and credibility, interviews you to surface missing achievements, and rebuilds a one-page resume.
-- **Applies from a screenshot:** a tailored resume (built by a script, so it looks the same every time) plus a 5–8 line email.
+- **Applies from a screenshot:** a tailored resume (built by a script, so it looks the same every time) plus a 5–8 line email, as a draft with the resume actually attached.
+- **Won't let a role through twice.** Reposts through staffing agencies are the norm; it checks the tracker before tailoring anything.
+- **Tells you when not to apply.** Strong / Partial / Mismatch, with the gap named — including postings you can't pass at all.
 - **Sends a daily digest** on a schedule and keeps a tracker of what you've applied to.
 - **Stays honest:** it uses only your real facts, never invents links or dates, and never sends anything without your OK.
 
@@ -32,7 +34,8 @@ skills/job-hunt/
     profile-template.md      the profile the assistant builds and relies on
     search-rules.md          roles, delivery-BA definition, cities, 3-day rule, filters, fit, output
     platforms-india.md       every relevant Indian job platform and how to reach it
-    application-workflow.md  job post → tailored resume + short email
+    application-workflow.md  job post → tailored resume + short email, and the attachment rules
+    fit-assessment.md        Strong / Partial / Mismatch, and catching reposts before you apply twice
     resume-review.md         market research, ATS/credibility checks, discovery interview, rebuild
     resume-format.md         one layout everywhere; how to build the file
     compensation-india.md    CTC terms, typical hikes, answering salary questions
@@ -40,6 +43,7 @@ skills/job-hunt/
     daily-digest-prompt.md   self-contained prompt for scheduled digests
     quality-checklist.md     checks before any job list, resume or email
   scripts/build_resume.py    JSON → one-page ATS-friendly DOCX/PDF
+  scripts/shrink_docx.py     ~40% smaller DOCX so the email attachment doesn't fail silently
   assets/                    resume example (JSON), LaTeX template, tracker CSV
 chatgpt/                     setup guide + Project instructions (fallback)
 gemini/                      setup guide + Gem instructions

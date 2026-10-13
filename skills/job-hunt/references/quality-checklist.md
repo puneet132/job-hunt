@@ -20,8 +20,11 @@ These failures happened in real use. Check for them every time.
 ## Emails
 - [ ] 5–8 lines of body, bullets, no caveat paragraphs.
 - [ ] Answers any question the posting asked (CTC, notice period).
-- [ ] Short LinkedIn reference in the signature.
-- [ ] Resume attached, or the user told in one line to attach it.
+- [ ] Short LinkedIn reference in the signature, not a full URL.
+- [ ] The tracker was checked for this company + title before any tailoring happened.
+- [ ] A resume is attached — tailored, or the master as fallback. Never a draft with no attachment, and never a cloud link in place of one.
+- [ ] The resume was run through `shrink_docx.py` before attaching.
+- [ ] The body claims "resume attached" only if the attachment was actually confirmed. If the tool can't report it, the user was told to check the paperclip.
 - [ ] Not sent without the user's explicit OK.
 
 ## Scheduled runs

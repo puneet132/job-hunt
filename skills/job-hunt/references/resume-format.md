@@ -23,6 +23,15 @@ The JSON shape is in `assets/resume-example.json`. Fill it from the profile, tai
 
 If the platform can't run code, write the resume in the same section order as plain text, and tell the user to paste it into their own Word or Google Docs template.
 
+## Before attaching it to an email
+Run `scripts/shrink_docx.py` on the built DOCX. Email tools send attachments as base64 inside the request and oversized payloads fail silently — the draft gets created, the attachment doesn't, and the body still says "resume attached".
+
+```bash
+python3 -I scripts/shrink_docx.py Jane_Doe_Product_Owner_Resume.docx Jane_Doe_Product_Owner_Resume_slim.docx
+```
+
+It drops the parts a resume never needs and recompresses: about 40% smaller, no visible change, still parses in Word and in ATS.
+
 ## Checks after building
 - Exactly one page. If it overflows, shorten bullets before shrinking fonts below 10pt.
 - Extract the text from the PDF (`pdftotext` or pdfminer). Titles and dates must come out cleanly, on their own lines, not run together.
